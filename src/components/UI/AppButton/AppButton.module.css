@@ -1,7 +1,7 @@
 .button {
   display: flex;
   justify-content: flex-start;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   color: white;
   background-color: rgb(87, 6, 134);
   padding: 0.5rem 1rem;

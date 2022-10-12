@@ -2,7 +2,6 @@
   text-align: center;
   height: 100vh;
   background-color: rgb(28, 28, 28);
-  padding-top: 1rem;
 }
 
 .input-sectoin {
@@ -10,5 +9,6 @@
   background-color: white;
   width: 60rem;
   max-width: 50%;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 1rem;
 }
