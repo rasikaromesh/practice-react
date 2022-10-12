@@ -1,0 +1,11 @@
+.button {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem;
+  color: white;
+  background-color: rgb(87, 6, 134);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}

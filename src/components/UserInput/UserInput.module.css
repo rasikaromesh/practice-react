@@ -1,7 +1,3 @@
-.form-control{
-    /* align-self: center;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 0 4px #ccc;
-    width: 70%; */
+.form-control {
+  padding: 1rem;
 }
