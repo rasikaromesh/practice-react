@@ -1,16 +1,6 @@
 .App {
   text-align: center;
-  height: 100vh;
   background-color: rgb(28, 28, 28);
-}
-
-.input-sectoin {
-  border-radius: 5px;
-  background-color: white;
-  width: 60rem;
-  max-width: 50%;
-  margin: 2rem auto;
-  padding: 1rem;
 }
 
 .hide {

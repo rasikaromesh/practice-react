@@ -1,0 +1,39 @@
+.backdrop {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 28.5%;
+  width: 40%;
+  z-index: 100;
+  padding: 0;
+}
+.modal-headder {
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+  padding: 1rem 1rem;
+  color: white;
+  background-color: rgb(87, 6, 134);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  min-height: 3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}

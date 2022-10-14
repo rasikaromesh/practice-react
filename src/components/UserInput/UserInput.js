@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AppButton from "../UI/AppButton/AppButton";
 import AppInput from "../UI/AppInput/AppInput";
+import AppModal from "../UI/AppModal/AppModal";
+import Card from "../UI/Card/Card";
 import style from "./UserInput.module.css";
 
 const UserInput = (props) => {
@@ -10,22 +12,39 @@ const UserInput = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     props.addUser({ id: Math.random().toString(), name, age });
+    setName("");
+    setAge("");
   };
 
-  const onBlurUserNameField = (userName) => {
+  const onChangeUserNameField = (userName) => {
     setName(userName);
   };
 
-  const onBlurAgeField = (age) => {
+  const onChangeAgeField = (age) => {
     setAge(age);
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className={style["form-control"]}>
-      <AppInput onBlur={onBlurUserNameField} lable="Username" type="text" />
-      <AppInput onBlur={onBlurAgeField} lable="Age (Years)" type="text" />
-      <AppButton type="submit" lable="Add User" />
-    </form>
+    <>
+      <AppModal></AppModal>
+      <Card>
+        <form onSubmit={onSubmitHandler} className={style["form-control"]}>
+          <AppInput
+            value={name}
+            onChange={onChangeUserNameField}
+            lable="Username"
+            type="text"
+          />
+          <AppInput
+            value={age}
+            onChange={onChangeAgeField}
+            lable="Age (Years)"
+            type="number"
+          />
+          <AppButton type="submit" lable="Add User" />
+        </form>
+      </Card>
+    </>
   );
 };
 
