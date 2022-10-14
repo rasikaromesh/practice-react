@@ -4,8 +4,8 @@ import AppButton from "../AppButton/AppButton";
 import Card from "../Card/Card";
 import styles from "./AppModal.module.css";
 
-const BackDrop = () => {
-  return <div className={styles.backdrop} />;
+const BackDrop = (props) => {
+  return <div onClick={props.onClick} className={styles.backdrop} />;
 };
 
 const FooterContent = (props) => {
@@ -16,7 +16,7 @@ const Modal = (props) => {
   return (
     <Card className={styles.modal}>
       <h3 className={styles["modal-headder"]}>{props.title}</h3>
-      <content className={styles.content}>{props.content}</content>
+      <div className={styles.content}>{props.content}</div>
       <footer className={styles.footer}>
         <FooterContent onClick={props.onOkayClick ? props.onOkayClick : null} />
       </footer>
@@ -24,14 +24,21 @@ const Modal = (props) => {
   );
 };
 
-const AppModal = () => {
+const AppModal = (props) => {
   return (
     <>
       {ReactDOM.createPortal(
-        <BackDrop />,
+        <BackDrop onClick={props.onOkayClick} />,
         document.getElementById("backdrop-root")
       )}
-      {ReactDOM.createPortal(<Modal />, document.getElementById("modal-root"))}
+      {ReactDOM.createPortal(
+        <Modal
+          onOkayClick={props.onOkayClick}
+          title={props.title}
+          content={props.message}
+        />,
+        document.getElementById("modal-root")
+      )}
     </>
   );
 };
